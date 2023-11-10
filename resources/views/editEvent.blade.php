@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Registration</title>
+    <title>Create Event</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -54,19 +54,23 @@
 <body>
 
 <div class="container">
-    <h2>Admin Registration</h2>
+    <h2>Edit Event</h2>
     <form action="#" method="post">
         @csrf
-        <label for="fullName">Full Name:</label>
-        <input type="text" id="Name" name="Name" required>
+        @method('PATCH')
+        <label for="eventName">Event Name:</label>
+        <input type="text" id="eventName" name="eventName" value="{{ $events->title }}" required>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <label for="eventDate">Event Date:</label>
+        <input type="date" id="eventDate" name="eventDate" value="{{ $events->start_time }}" required>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
+        <label for="Venue">Event Venue:</label>
+        <input type="text" id="venue" name="venue" value="{{ $events->venue }}" required>
 
-        <button type="submit">Register</button>
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" value="{{ $events->description }}" required>
+
+        <button type="submit">Update Event</button>
     </form>
 </div>
 

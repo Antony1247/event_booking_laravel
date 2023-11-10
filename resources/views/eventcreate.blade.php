@@ -56,17 +56,18 @@
 <div class="container">
     <h2>Create Event</h2>
     <form action="#" method="post">
+        @csrf
         <label for="eventName">Event Name:</label>
         <input type="text" id="eventName" name="eventName" required>
 
         <label for="eventDate">Event Date:</label>
         <input type="date" id="eventDate" name="eventDate" required>
 
-        <label for="eventTime">Event Time:</label>
-        <input type="time" id="eventTime" name="eventTime" required>
+        <label for="Venue">Event Venue:</label>
+        <input type="text" id="venue" name="venue" required>
 
-        <label for="location">Location:</label>
-        <input type="text" id="location" name="location" required>
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" required>
 
         <button type="submit">Create Event</button>
     </form>

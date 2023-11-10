@@ -42,22 +42,27 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h2>Sign In</h2>
-    <form action="#" method="post">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
+    <h2>Admin Sign In</h2>
+    <form action="#" method="POST">
+        @csrf
+        <label for="email">Username:</label>
+        <input type="text" id="email" name="email" required>
 
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
 
         <button type="submit">Sign In</button>
     </form>
+
+    <!-- Add Admin Register button -->
+    <button onclick="window.location.href='/adminregister'">Admin Register</button>
 </div>
 
 </body>

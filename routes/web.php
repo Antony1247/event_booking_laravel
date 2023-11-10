@@ -1,37 +1,24 @@
 <?php
+use App\Http\Controllers\eventCreator;
+use App\Http\Controllers\eventController;
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-Route::get('/', function () {
-    return view('select');
-});
 
-Route::get('/admin', function () {
-    return view('adminLogin');
-});
 
-Route::get('/admin/regester', function () {
-    return view('adminRegester');
-});
 
-Route::get('/dbconn', function () {
-    return view('dbconn');
-});
-
-Route::get('/{id}/createevent', function () {
-    return view('eventcreate');
-});
-
-Route::get('{id}/viewevent', function () {
-    return view('viewevent');
-});
+Route:: get('/', [eventCreator::class, 'index'])->name('select');
+Route:: get('/adminlogin', [eventCreator::class, 'login'])->name('admin.login');
+Route::post('/adminlogin', [eventCreator::class, 'authenticate']);
+Route:: get('/adminregister', [eventCreator::class, 'register'])->name('admin.register');
+Route::post('/adminregister', [eventCreator::class, 'store']);
+// GET DISPLAY
+Route:: get ('/{id}/event', [eventController::class, 'show'])->name('admin.event');
+// POST CREATE
+Route::get('/{id}/event/create', [eventController::class, 'create'])->name('admin.create');
+Route::post('/{id}/event/create', [eventController::class, 'store']);
+// PUT OR PATCH EDITING
+Route::get('/{id}/event/{eid}/edit', [eventController::class, 'edit']);
+Route::patch('/{id}/event/{eid}/edit', [eventController::class, 'update']);
+// DELETE
+Route::delete('/{id}/event/{eid}/delete', [eventController::class, 'destroy']);
