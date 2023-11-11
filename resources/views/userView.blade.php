@@ -13,10 +13,12 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
+            position: relative; /* Added position relative for positioning absolute elements */
         }
-        .logout{
+
+         .logout{
             position: absolute;
-            top: 10px;
+            top: 30px;
             left: 80%;
             background-color: #f32121;
             padding: 10px 15px;
@@ -25,6 +27,19 @@
             border-radius: 4px;
             cursor: pointer;
         }
+
+        .view-bookings-btn {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            background-color: #2196F3;
+            padding: 10px 15px;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
         .event-container {
             background-color: #fff;
             padding: 20px;
@@ -82,7 +97,7 @@
         .create-btn {
             position: absolute;
             top: 10px;
-            right: 80%;
+            right: 10px;
             background-color: #4caf50;
             padding: 10px 15px;
             color: #fff;
@@ -93,18 +108,16 @@
     </style>
 </head>
 <body>
-    <button class="logout" onclick="window.location.href='/'">Logout</button>
+
+<button class="view-bookings-btn" onclick="window.location.href='/{{ $user->id }}/ticket'">View Bookings</button>
+<button class="logout" onclick="window.location.href='/'">Logout</button>
+
 <div class="event-container">
     <h2>View Events</h2>
 
     @foreach($events as $event)
         <div class="event">
-            <button class="edit-btn" onclick="window.location.href='/{{ $event->user_id }}/event/{{ $event->id }}/edit'">Edit</button>
-            <form method="post" action="/{{ $event->user_id }}/event/{{ $event->id }}/delete" style="display: inline;">
-                @csrf
-                @method('DELETE')
-                <button type="submit" class="delete-btn">Delete</button>
-            </form>
+            <button class="edit-btn" onclick="window.location.href='/{{ $user->id }}/events/{{ $event->id }}/book'">Book</button>
 
             <h3>{{ $event->title }}</h3>
             <p><strong>Event Date:</strong> {{ $event->start_time }}</p>
@@ -112,8 +125,6 @@
             <p><strong>Description:</strong> {{ $event->description }}</p>
         </div>
     @endforeach
-    <button class="create-btn" onclick="window.location.href='/{{ $id }}/event/create'">Create New Event</button>
 </div>
-
 </body>
 </html>

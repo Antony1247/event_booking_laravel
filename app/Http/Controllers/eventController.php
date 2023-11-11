@@ -24,7 +24,7 @@ class eventController extends Controller
         $event ->start_time = $request->input('eventDate');
         $event ->venue = $request->input('venue');
         $event ->description = $request->input('description');
-
+        
 
         $user = Users::find($id);
 
@@ -38,7 +38,7 @@ class eventController extends Controller
     public function show(string $id)
     {
         $events = DB::table('events')->where('user_id', $id)->get();
-        return view('viewevent', compact('events'));
+        return view('viewevent', compact('events','id'));
     }
 
 

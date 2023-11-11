@@ -38,7 +38,7 @@
         <a href={{ route('admin.login') }}>
             <button type="button">admin</button>
           </a>
-          <a href={{ route('select') }}>
+          <a href={{ route('user.login') }}>
             <button type="button">user</button>
           </a>
     </form>
