@@ -102,11 +102,14 @@ class eventUser extends Controller
         $tickets = DB::table('tickets')
         ->join('events', 'tickets.event_id', '=', 'events.id')
         ->select('tickets.*', 'events.title as event_title')
-        ->get();
+        ->where('tickets.user_id', $id)->get();
+        // $tickets = DB::table('tickets')->where('id', $tid)->get();
 
 // Now, $tickets should contain the event title in each ticket object.
 
-        return view('showTicket', ['tickets' => $tickets]);
+        // return view('showTicket', ['tickets' => $tickets]);
+        return view('showTicket', compact('tickets'));
+
     }
 
 

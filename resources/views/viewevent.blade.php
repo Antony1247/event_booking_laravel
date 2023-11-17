@@ -110,6 +110,7 @@
             <p><strong>Event Date:</strong> {{ $event->start_time }}</p>
             <p><strong>Venue:</strong> {{ $event->venue }}</p>
             <p><strong>Description:</strong> {{ $event->description }}</p>
+            <p><strong>Price of ticket:</strong> {{ $event->ticket_price }}</p>
         </div>
     @endforeach
     <button class="create-btn" onclick="window.location.href='/{{ $id }}/event/create'">Create New Event</button>

@@ -94,12 +94,6 @@
         <?php } ?>
     </div>
 
-    <script>
-        function cancelTicket(ticketId) {
-            // Implement redirection logic here
-            window.location.href = '/<?= $ticket->user_id ?>/ticket/delete/' + ticketId;
-        }
-    </script>
 
 </body>
 </html>

@@ -29,7 +29,7 @@ Route::delete('/{id}/event/{eid}/delete', [eventController::class, 'destroy']);
 
 
 
-
+//USER LOGIN
 Route:: get('/userlogin', [eventUser::class, 'login'])->name('user.login');
 Route::post('/userlogin', [eventUser::class, 'authenticate']);
 Route:: get('/userregister', [eventUser::class, 'register'])->name('user.register');
