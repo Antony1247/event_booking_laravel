@@ -54,7 +54,7 @@
 <body>
 
 <div class="container">
-    <h2>Admin Registration</h2>
+    <h2>Register as a Event Hoster</h2>
     <form action="#" method="post">
         @csrf
         <label for="fullName">Full Name:</label>

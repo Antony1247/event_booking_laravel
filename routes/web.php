@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Route;
 
 
 Route:: get('/', [eventCreator::class, 'index'])->name('select');
+Route:: get('/select1', [eventCreator::class, 'LoginPage'])->name('select_onw');
+
 Route:: get('/adminlogin', [eventCreator::class, 'login'])->name('admin.login');
 Route::post('/adminlogin', [eventCreator::class, 'authenticate']);
 Route:: get('/adminregister', [eventCreator::class, 'register'])->name('admin.register');

@@ -1,8 +1,36 @@
 <html>
 <head>
-<body>        
+<body> 
+  
+  
+  <style>
+    body {
+        font-family: 'Product Sans', sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #b1b1b6;
+    }
+
+    .container {
+        width: 1440px;
+        height: 900px;
+        position: relative;
+        background: #F8F8FA;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    /* Rest of your styles... */
+
+</style>
+
+
 <div style="width: 1440px; height: 900px; position: relative; background: #F8F8FA; border-radius: 20px; overflow: hidden">
-    <img style="width: 600px; height: 900px; left: 840px; top: 0px; position: absolute" src="image1.jpeg" />
+    <img style="width: 600px; height: 900px; left: 840px; top: 0px; position: absolute" src="{{ asset('css/image1.jpeg') }}" />
     <div style="width: 600px; height: 900px; left: 840px; top: 0px; position: absolute; background: rgba(19, 19, 21, 0.30)"></div>
     <div style="width: 578px; height: 708px; left: 131px; top: 96px; position: absolute">
       <div style="left: 230px; top: 0px; position: absolute; text-align: center"><span style="color: black; font-size: 24px; font-family: Product Sans; font-weight: 700; word-wrap: break-word">Event</span><span style="color: #7848F4; font-size: 24px; font-family: Product Sans; font-weight: 700; word-wrap: break-word"> Hive</span></div>
@@ -50,12 +78,12 @@
 
     </div>
     <div style="width: 412px; height: 197px; left: 934px; top: 350px; position: absolute">
-      <div style="width: 236px; left: 88px; top: 0px; position: absolute; text-align: center; color: white; font-size: 40px; font-family: Product Sans; font-weight: 700; word-wrap: break-word">Hello Friend</div>
-      <div style="left: 0px; top: 89px; position: absolute; text-align: center; color: white; font-size: 16px; font-family: Product Sans; font-weight: 400; word-wrap: break-word">To keep connected with us provide us with your information </div>
+      <div style="width: 236px; left: 88px; top: 0px; position: absolute; text-align: center; color: white; font-size: 40px; font-family: Product Sans; font-weight: 700; word-wrap: break-word">Welcome</div>
+      <div style="left: 0px; top: 89px; position: absolute; text-align: center; color: white; font-size: 16px; font-family: Product Sans; font-weight: 400; word-wrap: break-word">Unlock Unforgettable Experiences: Book Your Next Event Today!</div>
       <!-- <div style="width: 128px; height: 49px; padding-left: 40px; padding-right: 40px; padding-top: 15px; padding-bottom: 15px; left: 145px; top: 148px; position: absolute; background: rgba(255, 255, 255, 0.40); border-radius: 5px; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
         <div style="text-align: center; color: white; font-size: 16px; font-family: Product Sans; font-weight: 400; word-wrap: break-word">Signup</div>
       </div> -->
-      <button type="submit" onclick="window.location.href='/userregister'" style="width: 128px; height: 49px; padding-left: 40px; padding-right: 40px; padding-top: 15px; padding-bottom: 15px; left: 145px; top: 148px; position: absolute; background: rgba(255, 255, 255, 0.40); border-radius: 5px; justify-content: center; align-items: center; gap: 10px; display: inline-flex">Sign Up</button>
+      <button type="submit" onclick="window.location.href='/userregister'" style="width: 128px; height: 49px; padding-left: 40px; padding-right: 40px; padding-top: 15px; padding-bottom: 15px; left: 145px; top: 148px; position: absolute; background: rgba(219, 216, 216, 0.4); border-radius: 5px; justify-content: center; align-items: center; gap: 10px; display: inline-flex">Sign Up</button>
     </div>
   </div>
 </form>

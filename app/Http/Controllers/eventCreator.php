@@ -14,7 +14,11 @@ class eventCreator extends Controller
 
     public function index()
     {
-        return view('select');
+        return view('select1');
+    }
+    public function LoginPage()
+    {
+        return view('LoginPage');
     }
 
 
