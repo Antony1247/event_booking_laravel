@@ -102,8 +102,7 @@
             <p><strong>Description:</strong> {{ $event->description }}</p>
         </div>
     @endforeach
-
-    <button class="create-btn" onclick="window.location.href='/{{ $event->user_id }}/event/create'">Create New Event</button>
+    <button class="create-btn" onclick="window.location.href='/{{ $id }}/event/create'">Create New Event</button>
 </div>
 
 </body>

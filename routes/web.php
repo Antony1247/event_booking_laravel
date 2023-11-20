@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\eventCreator;
 use App\Http\Controllers\eventController;
+use App\Http\Controllers\eventUser;
 
 use Illuminate\Support\Facades\Route;
 
@@ -8,6 +9,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route:: get('/', [eventCreator::class, 'index'])->name('select');
+Route:: get('/select', [eventCreator::class, 'LoginPage'])->name('select_onw');
 Route:: get('/adminlogin', [eventCreator::class, 'login'])->name('admin.login');
 Route::post('/adminlogin', [eventCreator::class, 'authenticate']);
 Route:: get('/adminregister', [eventCreator::class, 'register'])->name('admin.register');
@@ -22,3 +24,19 @@ Route::get('/{id}/event/{eid}/edit', [eventController::class, 'edit']);
 Route::patch('/{id}/event/{eid}/edit', [eventController::class, 'update']);
 // DELETE
 Route::delete('/{id}/event/{eid}/delete', [eventController::class, 'destroy']);
+
+
+
+
+
+
+
+Route:: get('/userlogin', [eventUser::class, 'login'])->name('user.login');
+Route::post('/userlogin', [eventUser::class, 'authenticate']);
+Route:: get('/userregister', [eventUser::class, 'register'])->name('user.register');
+Route::post('/userregister', [eventUser::class, 'store']);
+// GET DISPLAY
+Route:: get ('/{id}/events', [eventUser::class, 'show'])->name('user.event');
+//BOOKING
+Route:: get ('/{id}/events/{eid}/book', [eventUser::class, 'viewbook'])->name('user.book');
+Route:: post ('/{id}/events/{eid}/book', [eventUser::class, 'book']);

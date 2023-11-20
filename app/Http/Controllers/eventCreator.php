@@ -17,7 +17,10 @@ class eventCreator extends Controller
         return view('select');
     }
 
-
+    public function LoginPage()
+    {
+        return view('LoginPage');
+    }
 
 // ADMIN AUTHENTICATION------------------------------------------------------------------
     public function login()
