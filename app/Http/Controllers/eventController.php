@@ -24,7 +24,11 @@ class eventController extends Controller
         $event ->start_time = $request->input('eventDate');
         $event ->venue = $request->input('venue');
         $event ->description = $request->input('description');
+<<<<<<< HEAD
         
+=======
+        $event ->ticket_price = $request->input('price');
+>>>>>>> 71eaedf09402d5118ef1398e97848de5ab8e4bd4
 
         $user = Users::find($id);
 
@@ -58,6 +62,7 @@ class eventController extends Controller
             'start_time' => $request->input('eventDate'),
             'venue' => $request->input('venue'),
             'description' => $request->input('description'),
+            'ticket_price' => $request->input('price'),
             'user_id' => $id,
         ]);
     return redirect()->route('admin.event', ['id' => $id]);

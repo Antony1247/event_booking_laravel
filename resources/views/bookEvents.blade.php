@@ -15,7 +15,10 @@
             justify-content: center;
             height: 100vh;
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 71eaedf09402d5118ef1398e97848de5ab8e4bd4
         form {
             background-color: #fff;
             padding: 20px;
@@ -24,6 +27,18 @@
             width: 300px;
         }
 
+<<<<<<< HEAD
+=======
+        h2 {
+            text-align: center;
+            color: #007BFF;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+>>>>>>> 71eaedf09402d5118ef1398e97848de5ab8e4bd4
         label {
             display: block;
             margin-bottom: 8px;
@@ -43,6 +58,10 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
+<<<<<<< HEAD
+=======
+            width: 100%;
+>>>>>>> 71eaedf09402d5118ef1398e97848de5ab8e4bd4
         }
 
         button:hover {
@@ -51,12 +70,28 @@
     </style>
 </head>
 <body>
+<<<<<<< HEAD
 
     <form action="#" method="post">
         @csrf
         <h2>Book Event</h2>
         <label for="amount">Number of Tickets:</label>
         <input type="number" name="amount" value="amount" min="1">
+=======
+    <form action="#" method="post">
+        @csrf
+        <h2>Book Event</h2>
+        
+        <p><strong>Event Details:</strong></p>
+        <p><strong>Title:</strong> {{ $event1->title }}</p>
+        <p><strong>Venue:</strong> {{ $event1->venue }}</p>
+        <p><strong>Date:</strong> {{ $event1->start_time }}</p>
+        <p><strong>Price per Ticket:</strong> ${{ $event1->ticket_price }}</p>
+        
+        <label for="amount">Number of Tickets:</label>
+        <input type="number" name="amount" value="1" min="1">
+        
+>>>>>>> 71eaedf09402d5118ef1398e97848de5ab8e4bd4
         <button type="submit">Book Tickets</button>
     </form>
 

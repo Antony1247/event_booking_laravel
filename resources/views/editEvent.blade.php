@@ -70,6 +70,9 @@
         <label for="description">Description:</label>
         <input type="text" id="description" name="description" value="{{ $events->description }}" required>
 
+        <label for="price">Price of ticket:</label>
+        <input type="integer" id="price" name="price" value="{{ $events->ticket_price }}" required>
+
         <button type="submit">Update Event</button>
     </form>
 </div>

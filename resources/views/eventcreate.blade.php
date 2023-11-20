@@ -69,6 +69,9 @@
         <label for="description">Description:</label>
         <input type="text" id="description" name="description" required>
 
+        <label for="price">Price of ticket:</label>
+        <input type="integer" id="price" name="price" required>
+
         <button type="submit">Create Event</button>
     </form>
 </div>

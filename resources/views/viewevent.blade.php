@@ -14,7 +14,17 @@
             justify-content: center;
             min-height: 100vh;
         }
-
+        .logout{
+            position: absolute;
+            top: 10px;
+            left: 80%;
+            background-color: #f32121;
+            padding: 10px 15px;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
         .event-container {
             background-color: #fff;
             padding: 20px;
@@ -72,7 +82,7 @@
         .create-btn {
             position: absolute;
             top: 10px;
-            right: 10px;
+            right: 80%;
             background-color: #4caf50;
             padding: 10px 15px;
             color: #fff;
@@ -83,7 +93,7 @@
     </style>
 </head>
 <body>
-
+    <button class="logout" onclick="window.location.href='/'">Logout</button>
 <div class="event-container">
     <h2>View Events</h2>
 
@@ -100,6 +110,7 @@
             <p><strong>Event Date:</strong> {{ $event->start_time }}</p>
             <p><strong>Venue:</strong> {{ $event->venue }}</p>
             <p><strong>Description:</strong> {{ $event->description }}</p>
+            <p><strong>Price of ticket:</strong> {{ $event->ticket_price }}</p>
         </div>
     @endforeach
     <button class="create-btn" onclick="window.location.href='/{{ $id }}/event/create'">Create New Event</button>

@@ -11,7 +11,7 @@ class Events extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['title', 'description', 'start_time', 'venue', 'user_id'];
+    protected $fillable = ['title', 'description', 'start_time', 'venue', 'user_id','ticket_price'];
     public $timestamps = false;
     public function user()
     {
@@ -22,6 +22,10 @@ class Events extends Model
         $this->attributes['start_time'] = $value
             ? Carbon::createFromFormat('Y-m-d', $value)->toDateString()
             : null;
+    }
+    public function tickets()
+    {
+        return $this->hasMany(Ticket::class, 'event_id');
     }
 }
 

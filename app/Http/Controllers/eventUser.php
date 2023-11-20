@@ -65,9 +65,16 @@ class eventUser extends Controller
 
 
 //BOOKING
+<<<<<<< HEAD
     public function viewbook()
         {
             return view('bookEvents');
+=======
+    public function viewbook($id,$eid)
+        {
+            $event1 = DB::table('events')->where('id', $eid)->first();
+            return view('bookEvents', compact('event1'));
+>>>>>>> 71eaedf09402d5118ef1398e97848de5ab8e4bd4
         }
     public function book(Request $request, $id ,$eid)
         {
@@ -80,8 +87,14 @@ class eventUser extends Controller
             // Create a new ticket
             $ticket = new Ticket();
             $ticket ->amount = $request->input('amount');
+<<<<<<< HEAD
             $ticket ->price = $id;
             $ticket ->event_id = $eid;
+=======
+            $ticket ->price = $ticket->price = $event->ticket_price * $ticket->amount;;
+            $ticket ->event_id = $eid;
+            $ticket ->user_id = $id;
+>>>>>>> 71eaedf09402d5118ef1398e97848de5ab8e4bd4
 
             // Associate the ticket with the event
             $ticket->save();
@@ -93,4 +106,44 @@ class eventUser extends Controller
             // Redirect or return a response as needed
             return redirect()->route('user.event', ['id' => $id])->with('success', 'Ticket booked successfully');
     }
+<<<<<<< HEAD
 }
+=======
+//TICKET VIEWING--------------------------------------------------------------------------------------------------
+
+    public function viewticket($id)
+    {
+        $tickets = DB::table('tickets')
+        ->join('events', 'tickets.event_id', '=', 'events.id')
+        ->select('tickets.*', 'events.title as event_title')
+        ->where('tickets.user_id', $id)->get();
+        // $tickets = DB::table('tickets')->where('id', $tid)->get();
+
+// Now, $tickets should contain the event title in each ticket object.
+
+        // return view('showTicket', ['tickets' => $tickets]);
+        return view('showTicket', compact('tickets'));
+
+    }
+
+
+
+//TICKET cancelling--------------------------------------------------------------------------------------------------
+    public function destroy1($id,$tid)
+    {
+        
+        $deleted = DB::table('tickets')->where('id', $tid)->delete();
+
+        
+        if ($deleted) {
+            return redirect()->route('user.ticket', ['id' => $id])->with('success', 'Event deleted successfully');
+        } else {
+            return redirect()->back()->with('error', 'Failed to delete the event.');
+        }
+    }
+}
+
+
+
+//TICKET cancelling--------------------------------------------------------------------------------------------------
+>>>>>>> 71eaedf09402d5118ef1398e97848de5ab8e4bd4
