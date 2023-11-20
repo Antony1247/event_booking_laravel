@@ -12,7 +12,6 @@
   <div class="section-parallax parallax-00" style="background-image: url('http://www.ivang-design.com/svg-load/parallax/parallax-0.png');"></div>
   <div class="section-parallax parallax-01" style="background-image: url('http://www.ivang-design.com/svg-load/parallax/parallax-01.png');"></div>
 
-<<<<<<< HEAD
 <div class="section full-height">
   <div class="section-title-wrap">
     <div class="container">
@@ -24,19 +23,6 @@
       </div>	
     </div>
   </div>
-=======
-<div class="container">
-    <h2>Select User Type</h2>
-    <form action="#" method="POST">
-        <a href={{ route('admin.login') }}>
-            <button type="button">admin</button>
-          </a>
-          <a href={{ route('user.login') }}>
-            <button type="button">user</button>
-          </a>
-    </form>
-
->>>>>>> 71eaedf09402d5118ef1398e97848de5ab8e4bd4
 </div>
 
 <div class="section full-height z-bigger">
@@ -122,14 +108,6 @@
 
 <!-- <a href="https://themeforest.net/user/ig_design/portfolio"      class="link-to-portfolio hover-target" target=”_blank”></a>-->
 <div class="container link-to-portfolio hover-target" target=”_blank”>
-          <!-- <form action="#" class="col-sm-6" method="POST">
-            <a href="{{ route('admin.login') }}">
-              <button type="button">Admin</button>
-            </a>
-            <a href="{{ route('user.login') }}">
-              <button type="button">User</button>
-            </a>
-          </form> -->
           <button type="button" onclick="window.location.href='{{ route('select_onw') }}'">Login</button>
         </div>
 

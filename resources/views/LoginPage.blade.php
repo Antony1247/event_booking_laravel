@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Home</title>
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'><link rel="stylesheet" href="{{ asset('css/landing.css') }}">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'><link rel="stylesheet" href="{{ asset('css/select.css') }}">
 
 </head>
 <body>

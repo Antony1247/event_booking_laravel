@@ -58,10 +58,7 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
-<<<<<<< HEAD
-=======
             width: 100%;
->>>>>>> 71eaedf09402d5118ef1398e97848de5ab8e4bd4
         }
 
         button:hover {
@@ -70,14 +67,6 @@
     </style>
 </head>
 <body>
-<<<<<<< HEAD
-
-    <form action="#" method="post">
-        @csrf
-        <h2>Book Event</h2>
-        <label for="amount">Number of Tickets:</label>
-        <input type="number" name="amount" value="amount" min="1">
-=======
     <form action="#" method="post">
         @csrf
         <h2>Book Event</h2>
@@ -91,7 +80,6 @@
         <label for="amount">Number of Tickets:</label>
         <input type="number" name="amount" value="1" min="1">
         
->>>>>>> 71eaedf09402d5118ef1398e97848de5ab8e4bd4
         <button type="submit">Book Tickets</button>
     </form>
 

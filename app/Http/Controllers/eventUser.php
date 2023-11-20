@@ -65,16 +65,10 @@ class eventUser extends Controller
 
 
 //BOOKING
-<<<<<<< HEAD
-    public function viewbook()
-        {
-            return view('bookEvents');
-=======
     public function viewbook($id,$eid)
         {
             $event1 = DB::table('events')->where('id', $eid)->first();
             return view('bookEvents', compact('event1'));
->>>>>>> 71eaedf09402d5118ef1398e97848de5ab8e4bd4
         }
     public function book(Request $request, $id ,$eid)
         {
@@ -87,14 +81,9 @@ class eventUser extends Controller
             // Create a new ticket
             $ticket = new Ticket();
             $ticket ->amount = $request->input('amount');
-<<<<<<< HEAD
-            $ticket ->price = $id;
-            $ticket ->event_id = $eid;
-=======
             $ticket ->price = $ticket->price = $event->ticket_price * $ticket->amount;;
             $ticket ->event_id = $eid;
             $ticket ->user_id = $id;
->>>>>>> 71eaedf09402d5118ef1398e97848de5ab8e4bd4
 
             // Associate the ticket with the event
             $ticket->save();
@@ -106,9 +95,6 @@ class eventUser extends Controller
             // Redirect or return a response as needed
             return redirect()->route('user.event', ['id' => $id])->with('success', 'Ticket booked successfully');
     }
-<<<<<<< HEAD
-}
-=======
 //TICKET VIEWING--------------------------------------------------------------------------------------------------
 
     public function viewticket($id)
@@ -146,4 +132,3 @@ class eventUser extends Controller
 
 
 //TICKET cancelling--------------------------------------------------------------------------------------------------
->>>>>>> 71eaedf09402d5118ef1398e97848de5ab8e4bd4

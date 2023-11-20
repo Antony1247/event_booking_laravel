@@ -30,11 +30,7 @@ Route::delete('/{id}/event/{eid}/delete', [eventController::class, 'destroy']);
 
 
 
-<<<<<<< HEAD
-
-=======
 //USER LOGIN
->>>>>>> 71eaedf09402d5118ef1398e97848de5ab8e4bd4
 Route:: get('/userlogin', [eventUser::class, 'login'])->name('user.login');
 Route::post('/userlogin', [eventUser::class, 'authenticate']);
 Route:: get('/userregister', [eventUser::class, 'register'])->name('user.register');
@@ -43,12 +39,8 @@ Route::post('/userregister', [eventUser::class, 'store']);
 Route:: get ('/{id}/events', [eventUser::class, 'show'])->name('user.event');
 //BOOKING
 Route:: get ('/{id}/events/{eid}/book', [eventUser::class, 'viewbook'])->name('user.book');
-<<<<<<< HEAD
-Route:: post ('/{id}/events/{eid}/book', [eventUser::class, 'book']);
-=======
 Route:: post ('/{id}/events/{eid}/book', [eventUser::class, 'book']);
 //TICKET VIEW
 Route:: get ('/{id}/ticket', [eventUser::class, 'viewticket'])->name('user.ticket');
 // DELETE TICKETS
 Route::delete('/{id}/ticket/delete/{tid}', [eventUser::class, 'destroy1']);
->>>>>>> 71eaedf09402d5118ef1398e97848de5ab8e4bd4
